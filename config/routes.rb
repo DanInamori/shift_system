@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'rooms/index'
+  devise_for :users
   get 'shifts/index'
  root to: "rooms#index"
 end
