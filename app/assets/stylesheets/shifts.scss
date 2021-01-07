@@ -84,8 +84,9 @@
 }
 
 .shift-screen-main {
-  height: calc(100vh - 100px);
-  padding: 50px 40px;
+  height: calc(100vh - 200px);
+  margin: 50px 40px;
+  background-color: white;
 }
 
 .schedule {
