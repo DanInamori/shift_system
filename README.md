@@ -11,6 +11,7 @@
 ### Association
 
 - has_many :rooms
+- has_many :schedules
 - has_many :shifts
 
 ## rooms テーブル
@@ -22,7 +23,19 @@
 ### Association
 
 - has_many: users
+- has_many: schedules
+
+## schedules テーブル
+
+| Colum     | Type       | Options       |
+| --------- | ---------- | ------------- |
+| name      | string     | null: false   |
+
+### Association
+
+- has_many: users
 - has_many: shifts
+- belongs_to: room
 
 ## shift テーブル
 
@@ -36,4 +49,4 @@
 ### Association
 
 - belongs_to: user
-- belongs_to: room
+- belongs_to: schedule
