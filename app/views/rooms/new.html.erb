@@ -1,0 +1,26 @@
+<div class="contents row">
+  <div class="container">
+  <h2>ルーム作成</h2>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class="field">
+      <%= f.label :ルーム名 %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="member-select">
+      <label class="member-select-label">メンバー選択</label>
+      <select name="room[user_ids][]">
+        <option value="">メンバーを選んでください</option>
+        <% User.where.not(id: current_user.id).each do |user| %>
+          <option value=<%= user.id %>><%= user.nickname %></option>
+        <% end %>  
+      </select>
+      <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    </div>
+    <div class="actions">
+        <%= f.submit "追加" %>
+      </div>
+  <% end %>
+  <div class="cancel-create-room">
+    <%= link_to "戻る", root_path %>
+  </div>
+</div>  
