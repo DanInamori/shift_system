@@ -84,8 +84,10 @@
 }
 
 .shift-screen-main {
- height: calc(100vh - 100px);
- padding: 50px 40px;
+ height: calc(100vh - 200px);
+ margin: 50px 40px;
+ background-color: white;
+ overflow: scroll;
 }
 
 .schedule {
@@ -104,4 +106,25 @@
 .schedule-date {
  color: #aaaaaa;
  padding-right: 100px;
+}
+
+.member-select select {
+  padding: 12px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  width: 100%;
+  color: #110000;
+  margin-bottom: 30px;
+}
+
+.member-select-label {
+  color: #aaaaaa;
+}
+
+.cancel-create-room a {
+  text-decoration: none;
+  color: #aaaaaa;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
 }
