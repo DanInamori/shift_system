@@ -1,0 +1,17 @@
+<div class="contents row">
+  <div class="container">
+  <h2>新規スケジュール作成</h2>
+  <%=form_with model: [@room, @schedule], local: true do |f| %>
+    <div class="field">
+      <%= f.label :ルーム名 %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+    
+    <div class="actions">
+        <%= f.submit "追加" %>
+      </div>
+  <% end %>
+  <div class="cancel-create-room">
+    <%= link_to "戻る", root_path %>
+  </div>
+</div>  

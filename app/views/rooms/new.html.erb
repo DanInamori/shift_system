@@ -8,12 +8,14 @@
     </div>
     <div class="member-select">
       <label class="member-select-label">メンバー選択</label>
-      <select name="room[user_ids][]">
-        <option value="">メンバーを選んでください</option>
-        <% User.where.not(id: current_user.id).each do |user| %>
-          <option value=<%= user.id %>><%= user.nickname %></option>
-        <% end %>  
-      </select>
+        <div class="member">     
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <div class="member-name">
+              <input name="room[user_ids][]" type="checkbox" value=<%= user.id %>>
+              <label for="apple" class="label"><%= user.nickname %></label>
+            </div>
+          <% end %>  
+        </div>
       <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
     </div>
     <div class="actions">
