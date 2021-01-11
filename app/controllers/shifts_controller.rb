@@ -1,4 +1,4 @@
 class ShiftsController < ApplicationController
-  def index
+  def new
   end
 end

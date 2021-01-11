@@ -11,6 +11,11 @@
           <div class="room-name">
             <%= link_to room.name, room_path(room.id) %>
           </div>
+          <% if @room.id == room.id %>
+           <div class="room-delete">
+             <%= link_to "削除", room_path(params[:id]), method: :delete  %>
+           </div>
+          <% end %>
         </div>
       <% end %>
     </div>
@@ -19,7 +24,7 @@
     <div class="shift-screen-header">
       <div class="left-header">
         <div class="header-title">
-          <%= link_to "", "#" %>
+          <%= link_to @room.name , "#" %>
         </div>
       </div>
       <div class="main-header">
@@ -33,19 +38,25 @@
     </div>
     <div class="shift-screen-main">
       <div class="schedules">
-        <div class="schedule">
-          <div class="schedule-name">
-          </div>
-          <div class="schedule-date">
-          </div>
-        </div>
+        <% @schedules.each do |schedule|%>
+          <% if @room.id == schedule.room_id %>
+            <div class="schedule">
+              <div class="schedule-name">
+                <%= link_to schedule.name, room_schedule_path(@room.id, schedule.id) %>
+              </div>
+              <div class="schedule-date">
+                <%= schedule.updated_at %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
       </div>
-    <%# </div> %>
-    <%# <div class="main-footer"> %>
-      <%# <div class="create-schedule" > %>
-        <%# <%= link_to "新規スケジュール作成", "#" %>
-      <%# </div> %>
-    <%# </div> %>
+    </div>
+    <div class="main-footer">
+      <div class="create-schedule" >
+        <%= link_to "新規スケジュール作成", new_room_schedule_path(params[:id]) %>
+      </div>
+    </div>
   </div>
 </div>
     <%# <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
