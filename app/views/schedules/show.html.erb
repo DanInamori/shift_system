@@ -3,6 +3,9 @@
     <div class="schedule-title">
       <h1><%= @schedule.name %></h1>
     </div>
+    <div class="shift-check">
+      <%= link_to "#{current_user.nickname}さんの提出シフト", user_path(current_user.id) %>
+    </div>
   </div>
   <div class="schedule-main-screen">
     
@@ -13,11 +16,11 @@
         <%= link_to "シフトを修正する", "#" %>
       </div>
       <div class="submit-shift">
-        <%= link_to "シフトを提出する", "#" %>
+        <%= link_to "シフトを提出する", new_room_schedule_shift_path(@schedule.room_id, params[:id]) %>
       </div>
     </div>
       <div class="back-to-top">
-        <%= link_to "戻る", root_path %>
+        <%= link_to "戻る", room_path(@room.id) %>
       </div>
   </div>
 </div>

@@ -1,19 +1,86 @@
+.header {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  padding: 10px 0 15px;
+  border-bottom: 2px solid #aaaaaa;
+  z-index: 5;
+  background-color: white;
+  height: 60px;
+}
+
+.header-bar {
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.header-log {
+  height: 45px;
+  width: 80px;
+}
+
+.header-menu-bar::before {
+  content: '\f107';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: black;
+  position: absolute;
+  bottom: 5px;
+  right: 35px;
+  font-size: 25px;
+}
+
 .wrapper {
   display: flex;
+  margin-top: 60px;
+  height: calc(100vh - 60px);
 }
 
 .side-bar {
- background-color: #CC6600;
- width: 300px;
- height: 100vh;
+  width: 300px;
+  height: calc(100vh - 60px);
 }
 
 .side-bar-header {
+ background-color: #CC6600;
+ opacity: 0.95;
  height: 100px;
  padding: 0 20px;
  display: flex;
  align-items: center;
- justify-content: center;
+ justify-content: flex-start;
+ position: relative;
+}
+
+.user-detail {
+  display: flex;
+  width: 240px;
+  height: 80px;
+  align-items: center;
+}
+
+.user-image {
+  width: 33%;
+  height: 100%;
+  margin-right: 30px;
+}
+
+.user-image img {
+  border-radius: 50%;
+}
+
+.user-name a{
+  text-decoration: none;
+  color: white;
+}
+
+.bars::before {
+  content: '\f0c9';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: white;
 }
 
 .create-room a {
@@ -26,16 +93,27 @@
 }
 
 .side-bar-main {
- padding: 0 20px;
- height: calc(100vh - 100px);
+ height: calc(100vh - 160px);
+ width: 300px;
  background-color: #F8F8FF;
  border-right: 1px solid #CC6600;
+ padding-bottom: 30px;
  overflow: scroll;
 }
 
 .room {
- padding: 20px 0 40px;
-position: relative;
+ padding: 10px 20px 30px;
+ position: relative;
+}
+
+.room:hover {
+  background-color: #f5f5f5;
+}
+
+.room-name {
+  overflow: scroll;
+  word-break: keep-all;
+  padding: 10px 0;
 }
 
 .room-name a {
@@ -43,17 +121,28 @@ position: relative;
  color: #110000;
 }
 
+.trash-alt::before {
+  content: '\f2ed';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: #aaaaaa;
+}
+
 .room-delete a {
- text-decoration: none;
- color: #aaaaaa;
  position: absolute;
  right: 5px;
  bottom: 5px;
 }
 
+.trash-alt:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
 .shift-screen {
  background-color: #F8F8FF;
  width: calc(100vw - 300px);
+ height: calc(100vh - 60px) ;
 }
 
 .shift-screen-header {
@@ -67,11 +156,13 @@ position: relative;
 
 .header-title {
   width: 200px;
+  padding: 10px 0;
   overflow: scroll;
+  word-break: keep-all;
 }
 
 .header-title a {
- font-size: 30px;
+ font-size: 20px;
  text-decoration: none;
  color: #110000;
 }
@@ -99,11 +190,18 @@ position: relative;
  width: 70px;
 }
 
+.search-btn:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
+}
+
 .shift-screen-main {
- height: calc(100vh - 270px);
+ height: calc(100vh - 330px);
  margin: 50px 40px 0px;
- background-color: white;
  overflow: scroll;
+ background-image: url(sanple.jpg);
+ background-repeat:  no-repeat;
+ opacity: 0.3;
 }
 
 .schedule {
@@ -111,17 +209,23 @@ position: relative;
  display: flex;
  justify-content: space-between;
  padding: 5px;
+ background-color: white;
+ opacity: 0.8;
+}
+
+.schedule:hover {
+  background-color: #aaaaaa;
 }
 
 .schedule-name a {
-  padding-left: 150px;
+ padding-left: 100px;
  text-decoration: none;
- color: #110000;
+ color: black;
  font-size: 20px;
 }
 
 .schedule-date {
- color: #aaaaaa;
+ color: black;
  padding-right: 100px;
 }
 
@@ -132,7 +236,7 @@ position: relative;
 }
 
 .create-schedule {
-  margin-top: 30px;
+  margin-top: 40px;
 }
 
 .create-schedule a {
@@ -142,6 +246,11 @@ position: relative;
   background-color: #CC6600;
   padding: 10px;
   border-radius: 5px;
+}
+
+.create-schedule a:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
 }
 
 // 下記よりnew.html.rb
@@ -175,4 +284,8 @@ position: relative;
   position: absolute;
   bottom: 40px;
   right: 40px;
+}
+
+.cancel-create-room a:hover {
+  font-weight: 600;
 }

@@ -1,0 +1,117 @@
+.contents {
+  width: 100vw;
+  height: 100vh;
+  background-color: #f8f8ff;
+  display: flex;
+  justify-content: center;
+  // align-items: baseline;
+}
+
+.container {
+  height: 60%;
+  width: 60%;
+  margin: 150px 0 60px;
+  padding: 0 50px 40px;
+  background-color: white	;
+  border: 1px solid #dcdcdc;
+  overflow: scroll;
+  position: relative;
+}
+.form-content {
+  padding: 20px 20px 0;
+  position: relative;
+}
+
+.action {
+  text-decoration: none;
+  color: #aaaaaa;
+  position: absolute;
+  bottom: 0;
+  right: 40px;
+}
+
+.action:hover {
+  font-weight: 600;
+}
+
+.remind {
+  text-decoration: none;
+  color: #aaaaaa;
+  position: absolute;
+  left: 10px;
+}
+.remind:hover {
+  font-weight: 600;
+}
+
+h2 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 20px 0;
+  color: #aaaaaa;
+}
+
+.field {
+  margin-bottom: 10px;
+}
+
+.field label {
+  color: #aaaaaa;
+}
+
+.field em {
+  color: #aaaaaa;
+} 
+
+.form-input {
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  width: 100%;
+}
+
+.input-name-wrap {
+  display: flex;
+  justify-content: space-between;
+}
+
+.form-first-input {
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  width: 49%;
+}
+
+.form-last-input {
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  width: 49%;
+}
+
+input::placeholder {
+  color: #aaaaaa;
+}
+
+.form-text-area {
+  padding: 10px;
+  border: 1px solid #dcdcdc;
+  border-radius: 10px;
+  width: 100%;
+  height: 100px;
+}
+
+.actions input {
+  background-color: #CC6600;
+  border-radius: 10px;
+  color: #F8F8FF;
+  font-size: 100%;
+  padding: 10px;
+  border: none;
+  width: 80px;
+}
+
+.actions input:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
+}

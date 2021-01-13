@@ -1,8 +1,18 @@
 <div class="wrapper">
   <div class="side-bar">
     <div class="side-bar-header">
+      <div class="user-detail">
+        <div class="user-image">
+          <%= image_tag 'icon_sanple.png' , size: '80x80' %>
+        </div>
+        <div class="user-name">
+          <%= link_to current_user.nickname, "#" %>
+        </div>
+      </div>
       <div class="create-room">
-        <%= link_to "ルーム作成", new_room_path %>
+       <%= link_to new_room_path, class:"bars" do %>
+         <i class="far fa-bars"></i>
+       <% end %>
       </div>
     </div>
     <div class="side-bar-main">
