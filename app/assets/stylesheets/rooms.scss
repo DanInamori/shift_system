@@ -84,20 +84,11 @@
 }
 
 .create-room a {
-<<<<<<< Updated upstream
  text-decoration: none;
  color: #f8f8ff;
  border: 1px solid #FF570D;
  font-size: 10px;
  padding: 14px;
-=======
-  text-decoration: none; 
-}
-
-.create-room a:hover {
-  opacity: 0.5;
-  transition: all 0.3s;
->>>>>>> Stashed changes
 }
 
 .side-bar-main {
@@ -110,9 +101,6 @@
 }
 
 .room {
-<<<<<<< Updated upstream
- padding: 20px 0 40px;
-=======
  padding: 10px 20px 30px;
  position: relative;
 }
@@ -125,7 +113,6 @@
   overflow: scroll;
   word-break: keep-all;
   padding: 10px 0;
->>>>>>> Stashed changes
 }
 
 .room-name a {
@@ -133,8 +120,6 @@
  color: #110000;
 }
 
-<<<<<<< Updated upstream
-=======
 .trash-alt::before {
   content: '\f2ed';
   font-family: 'Font Awesome 5 Free';
@@ -153,7 +138,6 @@
   transition: all 0.3s;
 }
 
->>>>>>> Stashed changes
 .shift-screen {
  background-color: #F8F8FF;
  width: calc(100vw - 300px);
@@ -166,8 +150,6 @@
  padding: 0 40px;
  display: flex;
  align-items: center;
-<<<<<<< Updated upstream
-=======
  justify-content: space-around;
 }
 
@@ -176,7 +158,6 @@
   padding: 10px 0;
   overflow: scroll;
   word-break: keep-all;
->>>>>>> Stashed changes
 }
 
 .header-title a {
@@ -214,17 +195,12 @@
 }
 
 .shift-screen-main {
-<<<<<<< Updated upstream
- height: calc(100vh - 100px);
- padding: 50px 40px;
-=======
  height: calc(100vh - 330px);
  margin: 50px 40px 0px;
  overflow: scroll;
  background-image: url(sanple.jpg);
  background-repeat:  no-repeat;
  opacity: 0.3;
->>>>>>> Stashed changes
 }
 
 .schedule {
@@ -240,10 +216,7 @@
 }
 
 .schedule-name a {
-<<<<<<< Updated upstream
-=======
  padding-left: 100px;
->>>>>>> Stashed changes
  text-decoration: none;
  color: black;
  font-size: 20px;
@@ -254,8 +227,6 @@
  color: black;
  padding-right: 100px;
 }
-<<<<<<< Updated upstream
-=======
 
 .main-footer {
   height: 120px;
@@ -317,4 +288,3 @@
 .cancel-create-room a:hover {
   font-weight: 600;
 }
->>>>>>> Stashed changes
