@@ -1,7 +1,5 @@
 class ShiftsController < ApplicationController
-<<<<<<< Updated upstream
-  def index
-=======
+
   def new
     @shift = Shift.new
     @room = Room.find(params[:room_id])
@@ -21,6 +19,5 @@ class ShiftsController < ApplicationController
 
   def shift_params
     params.require(:shift).permit(:shift, :comment).merge(user_id: current_user.id, schedule_id: params[:schedule_id])
->>>>>>> Stashed changes
   end
 end

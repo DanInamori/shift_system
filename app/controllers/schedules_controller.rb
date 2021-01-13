@@ -26,4 +26,5 @@ class SchedulesController < ApplicationController
   def set_room
     @room = Room.find(params[:room_id])
   end
+
 end
