@@ -1,0 +1,25 @@
+<div class="contents row">
+  <div class="container">
+  <h2>ルーム作成</h2>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class="field">
+      <%= f.label :ルーム名 %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="member-select">
+      <label class="member-select-label">メンバー選択</label>
+        <div class="member">     
+          <% User.where.not(id: current_user.id).each do |user| %>
+            <div class="member-name">
+              <input name="room[user_ids][]" type="checkbox" value=<%= user.id %>>
+              <label for="apple" class="label"><%= user.nickname %></label>
+            </div>
+          <% end %>  
+        </div>
+      <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
+    </div>
+    <div class="actions">
+        <%= f.submit "追加" %>
+      </div>
+  <% end %>
+</div>  

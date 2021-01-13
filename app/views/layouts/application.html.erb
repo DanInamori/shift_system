@@ -5,11 +5,21 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <link rel="stylesheet" type="text/css" href="http://yui.yahooapis.com/3.18.1/build/cssreset/cssreset-min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.0/css/all.css">
     <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
+    <header class="header">
+      <div class="header-bar">
+        <%= link_to root_path do %>
+          <%= image_tag "title.png", class:"header-log" %>
+        <% end %>
+        <%= link_to destroy_user_session_path, class: "header-menu-bar", method: :delete do %>
+        <% end %>
+      </div>
+    </header>
     <%= yield %>
   </body>
 </html>

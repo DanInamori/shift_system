@@ -1,0 +1,71 @@
+<div class="wrapper">
+  <div class="side-bar">
+    <div class="side-bar-header">
+      <div class="user-detail">
+        <div class="user-image">
+          <%= image_tag 'icon_sanple.png' , size: '80x80' %>
+        </div>
+        <div class="user-name">
+          <%= link_to current_user.nickname, "#" %>
+        </div>
+      </div>
+        <div class="create-room">
+          <%= link_to new_room_path, class:"bars" do %>
+          <% end %>
+        </div>
+      </div>
+    <div class="side-bar-main">
+      <% current_user.rooms.each do |room| %>
+        <div class="room">
+          <div class="room-name">
+            <%= link_to room.name, room_path(room.id) %>
+          </div>
+          <% if @room.id == room.id %>
+           <div class="room-delete">
+             <%= link_to  room_path(params[:id]), class:"trash-alt", method: :delete do %>
+             <% end %>
+           </div>
+          <% end %>
+        </div>
+      <% end %>
+    </div>
+  </div>
+  <div class="shift-screen">
+    <div class="shift-screen-header">
+      <div class="left-header">
+        <div class="header-title">
+          <%= link_to @room.name , "#" %>
+        </div>
+      </div>
+      <div class="main-header">
+        <div class="header-search">
+          <%= form_with( local: true, class: "search-form") do |form| %>
+          <%= form.text_field :keyword, placeholder: "スケジュールを検索", class: "search-input" %>
+          <%= form.submit "検索", class: "search-btn" %>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <div class="shift-screen-main">
+      <div class="schedules">
+        <% @schedules.each do |schedule|%>
+          <% if @room.id == schedule.room_id %>
+            <div class="schedule">
+              <div class="schedule-name">
+                <%= link_to schedule.name, room_schedule_path(@room.id, schedule.id) %>
+              </div>
+              <div class="schedule-date">
+                <%= schedule.updated_at %>
+              </div>
+            </div>
+          <% end %>
+        <% end %>
+      </div>
+    </div>
+    <div class="main-footer">
+      <div class="create-schedule" >
+        <%= link_to "新規スケジュール作成", new_room_schedule_path(params[:id]) %>
+      </div>
+    </div>
+  </div>
+</div>

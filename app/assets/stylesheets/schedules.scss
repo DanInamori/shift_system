@@ -1,0 +1,140 @@
+.schedule-wrapper {
+  padding-top: 60px;
+  height: 100vh;
+  width: 100vw;
+  background-color: #f8f8ff;
+}
+
+.schedule-header {
+  height: 80px;
+  border-bottom: 1px solid #FF570D;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.schedule-title {
+  font-size: 25px;
+  padding-top: 40px;
+  color: #110000;
+}
+
+.shift-check a {
+ text-decoration: none;
+ color: #110000;
+ position: absolute;
+ bottom: 10px;
+ right: 20px;
+ font-size: 20px;
+}
+
+.shift-check a:hover{
+opacity: 0.5;
+}
+
+.schedule-main-screen {
+  height: calc(100vh - 320px);
+  background-color: white;
+  margin: 40px 80px;
+  overflow: scroll;
+  padding: 0 20px;
+}
+
+.submitted {
+  height: 70px;
+  border: 1px solid #dcdcdc;
+  display: flex;
+  overflow: scroll;
+}
+
+.submitted-shift-left {
+  width: 130px;
+  height: 100%;
+}
+
+.submitted-shift-user-name {
+  width: 130px;
+  height: 100%;
+  border: 2px solid #dcdcdc;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.submitted-shift-user-name a {
+  text-decoration: none;
+  color: #110000;
+}
+
+.submitted-shift-right {
+  height: 100%;
+  width: 100%;
+  display: flex;
+}
+
+.submitted-shift-block {
+  width: 70px;
+  height: 100%;
+  border: 1px solid #dcdcdc;
+  display: flex;
+  flex-direction: column;
+}
+
+.submitted-shift-date {
+  border: 1px solid #dcdcdc;
+  height: 28x;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.submitted-shift-detail {
+  border: 1px solid #dcdcdc;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.schedule-footer {
+  height: 100px;
+  border-top: 1px solid #FF570D;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+
+.schedule-footer-main {
+  display: flex;
+  width: 50%;
+  justify-content: space-around;
+}
+
+.submit-shift {
+  margin-top: 20px;
+}
+
+.submit-shift a {
+  text-decoration: none;
+  color: #F8F8FF;
+  font-size: 18px;
+  background-color: #CC6600;
+  padding: 10px;
+  border-radius: 5px;
+}
+
+.submit-shift a:hover {
+  opacity: 0.8;
+}
+
+.back-to-top a {
+  text-decoration: none;
+  color: #aaaaaa;
+  position: absolute;
+  bottom: 40px;
+  right: 40px;
+}
+
+.back-to-top a:hover {
+  font-weight: 600;
+}
+
