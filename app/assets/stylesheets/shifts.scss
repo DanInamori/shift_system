@@ -1,0 +1,25 @@
+.form-container {
+  height: 60%;
+}
+
+.attendance-contents {
+  height: 60%;
+  overflow: scroll;
+}
+
+.attendance-content {
+  display: flex;
+  justify-content: center;
+}
+
+.form-shift {
+  color: #aaaaaa;
+}
+
+.form-shift.date {
+  margin-right: 20px;
+}
+
+.form-shift.clock.out {
+  margin-right: 5px;
+}

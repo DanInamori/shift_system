@@ -17,14 +17,10 @@
     <div class="side-bar-main">
       <% current_user.rooms.each do |room| %>
         <div class="room">
-          <div class="room-name">
-            <%= link_to room.name, room_path(room.id) %>
-          </div>
+          <%= link_to room.name, room_path(room.id), class: "room-name" %>
           <% if @room.id == room.id %>
-           <div class="room-delete">
              <%= link_to  room_path(params[:id]), class:"trash-alt", method: :delete do %>
              <% end %>
-           </div>
           <% end %>
         </div>
       <% end %>
@@ -34,7 +30,7 @@
     <div class="shift-screen-header">
       <div class="left-header">
         <div class="header-title">
-          <%= link_to @room.name , "#" %>
+          <%= link_to @room.name , new_room_shift_creator_path(@room.id) %>
         </div>
       </div>
       <div class="main-header">
@@ -51,12 +47,10 @@
         <% @schedules.each do |schedule|%>
           <% if @room.id == schedule.room_id %>
             <div class="schedule">
-              <div class="schedule-name">
-                <%= link_to schedule.name, room_schedule_path(@room.id, schedule.id) %>
-              </div>
-              <div class="schedule-date">
-                <%= schedule.updated_at %>
-              </div>
+              <%= link_to  room_schedule_path(@room.id, schedule.id), class: "schedule-details" do %>
+                <p class="schedule-name"><%= schedule.name %></p>
+                <p class="schedule-date"><%= schedule.updated_at %></p>
+              <% end %>
             </div>
           <% end %>
         <% end %>
@@ -68,3 +62,4 @@
       </div>
     </div>
   </div>
+

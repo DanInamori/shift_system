@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_11_085450) do
+ActiveRecord::Schema.define(version: 2021_01_15_024355) do
 
   create_table "rooms", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
@@ -26,8 +26,17 @@ ActiveRecord::Schema.define(version: 2021_01_11_085450) do
     t.index ["room_id"], name: "index_schedules_on_room_id"
   end
 
+  create_table "shift_creators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "room_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["room_id"], name: "index_shift_creators_on_room_id"
+  end
+
   create_table "shifts", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.integer "shift", null: false
+    t.date "work_day"
+    t.time "clock_in"
+    t.time "clock_out"
     t.bigint "user_id"
     t.bigint "schedule_id"
     t.text "comment"
@@ -55,6 +64,15 @@ ActiveRecord::Schema.define(version: 2021_01_11_085450) do
     t.index ["user_id"], name: "index_user_schedules_on_user_id"
   end
 
+  create_table "user_shift_creators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "shift_creator_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["shift_creator_id"], name: "index_user_shift_creators_on_shift_creator_id"
+    t.index ["user_id"], name: "index_user_shift_creators_on_user_id"
+  end
+
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "nickname", null: false
     t.string "email", default: "", null: false
@@ -73,10 +91,13 @@ ActiveRecord::Schema.define(version: 2021_01_11_085450) do
   end
 
   add_foreign_key "schedules", "rooms"
+  add_foreign_key "shift_creators", "rooms"
   add_foreign_key "shifts", "schedules"
   add_foreign_key "shifts", "users"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
   add_foreign_key "user_schedules", "schedules"
   add_foreign_key "user_schedules", "users"
+  add_foreign_key "user_shift_creators", "shift_creators"
+  add_foreign_key "user_shift_creators", "users"
 end

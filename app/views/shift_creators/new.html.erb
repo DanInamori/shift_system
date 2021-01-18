@@ -1,0 +1,26 @@
+<div class="contents row">
+  <div class="container">
+    <h2>シフト作成者登録</h2>
+    <div class="form-content shift-creator-form">
+      <%=form_with model: [@room, @shift_creator], local: true do |f| %>
+        <p class="creator-confirmation"><%= "【#{@room.name}】のシフト作成者を選んでください"%></p>
+        <div class="member-select">
+          <div class="member">     
+            <% User.where(id: @room.users.ids).each do |user| %>
+              <div class="member-name">
+                <input name="shift_creator[user_ids][]" type="checkbox" value=<%= user.id %>>
+                <label for="apple" class="label"><%= user.nickname %></label>
+              </div>
+            <% end %>  
+          </div>
+        </div>
+        <div class="creator-actions">
+          <%= f.submit "作成者に登録する" %>
+        </div>
+      <% end %>     
+    </div>
+    <div class="cancel-create-room">
+      <%= link_to "戻る", room_path(@room.id) %>
+    </div>
+  </div>
+</div>  

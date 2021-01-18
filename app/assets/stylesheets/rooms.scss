@@ -83,6 +83,11 @@
   color: white;
 }
 
+.bars:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
 .create-room a {
  text-decoration: none;
 }
@@ -97,8 +102,9 @@
 }
 
 .room {
- padding: 10px 20px 30px;
  position: relative;
+ overflow: scroll;
+ word-break: keep-all;
 }
 
 .room:hover {
@@ -106,14 +112,10 @@
 }
 
 .room-name {
-  overflow: scroll;
-  word-break: keep-all;
-  padding: 10px 0;
-}
-
-.room-name a {
- text-decoration: none;
- color: #110000;
+  padding: 15px 20px 40px;
+  text-decoration: none;
+  color: #110000;
+  display: block;
 }
 
 .trash-alt::before {
@@ -121,12 +123,10 @@
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #aaaaaa;
-}
-
-.room-delete a {
- position: absolute;
- right: 5px;
- bottom: 5px;
+  position: absolute;
+  right: 5px;
+  top: 25px;
+  display: inline;
 }
 
 .trash-alt:hover {
@@ -195,14 +195,13 @@
  margin: 50px 40px 0px;
  overflow: scroll;
  background-image: url(sanple.jpg);
- background-repeat:  no-repeat;
+ background-size:  cover;
  opacity: 0.3;
 }
 
 .schedule {
  width: 100%;
  display: flex;
- justify-content: space-between;
  padding: 5px;
  background-color: white;
  opacity: 0.8;
@@ -212,9 +211,17 @@
   background-color: #aaaaaa;
 }
 
-.schedule-name a {
+.schedule-details {
+  text-decoration: none;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  
+}
+
+.schedule-name {
  padding-left: 100px;
- text-decoration: none;
  color: black;
  font-size: 20px;
 }

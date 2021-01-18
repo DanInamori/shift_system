@@ -1,17 +1,31 @@
 <div class="contents row">
   <div class="container">
   <h2>シフト提出</h2>
-  <%=form_with model: [@room, @schedule, @shift], local: true do |f| %>
-    <div class="field">
-      <%= f.label :シフト希望 %>
-      <%= f.text_field :shift, autofocus: true, class: "form-input" %>
-    </div>
-    <div class="field">
-      <%= f.label :備考 %>
-      <%= f.text_area :comment, class: "form-text-area" %>
-    </div>
-    <div class="actions">
-        <%= f.submit "追加" %>
+  <%=form_with model: [@room, @schedule, @form], url:room_schedule_shifts_path, method: :post, local: true, class:"form-container" do |form| %>
+    <%= form.fields_for :shifts do |f|%>
+     <div class="attendance-contents">
+          <div class="attendance-content">
+            <div class="field">
+              <%= f.label :日付 %>
+              <%= f.date_field :work_day, autofocus: true, class: "form-shift date" %>
+            </div>
+            <div class="field">
+              <%= f.time_field :clock_in, class: "form-shift clock out" %>
+            </div>
+            <div class="field">
+              <%= f.label :〜 %>
+              <%= f.time_field :clock_out, class: "form-shift clock in" %>
+            </div>
+            <%= f.text_area :comment %>
+          </div>
+     </div>
+    <% end %>
+    <%# <div class="field"> %>
+      <%# <%= f.label :備考 %>
+      <%# <%= f.text_area :comment, class: "form-text-area" %>
+    <%# </div> %>
+      <div class="actions">
+        <%= form.submit "提出" %>
       </div>
   <% end %>
   <div class="cancel-create-room">

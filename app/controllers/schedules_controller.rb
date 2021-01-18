@@ -20,7 +20,10 @@ class SchedulesController < ApplicationController
 
   private
   def schedule_params
-    params.require(:schedule).permit(:name).merge(room_id: params[:room_id])
+    params
+      .require(:schedule)
+      .permit(:name)
+      .merge(room_id: params[:room_id])
   end
 
   def set_room
