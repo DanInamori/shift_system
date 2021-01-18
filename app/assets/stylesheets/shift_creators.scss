@@ -1,0 +1,35 @@
+.shift-creator-form{
+  height: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.creator-confirmation {
+  color: #aaaaaa;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.creator-actions {
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
+}
+
+.creator-actions input {
+  background-color: #CC6600;
+  border-radius: 10px;
+  color: #F8F8FF;
+  font-size: 100%;
+  padding: 10px;
+  border: none;
+  width: 40%;
+  
+}
+
+.creator-actions input:hover {
+  opacity: 0.8;
+  transition: all 0.3s;
+}
