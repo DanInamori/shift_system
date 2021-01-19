@@ -25,6 +25,11 @@ class RoomsController < ApplicationController
     @room.destroy
     redirect_to root_path
   end
+
+  def search
+    @room = Room.find(params[:id])
+    @schedules = Schedule.search(params[:keyword])
+  end
   
   private
   

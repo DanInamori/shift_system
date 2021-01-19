@@ -8,6 +8,7 @@ class Form::ShiftCollection < Form::Base
   end
   
   def shifts_attributes=(attributes)
+    binding.pry
     self.shifts = attributes.map {|_, v| Shift.new(v)}
   end
   
