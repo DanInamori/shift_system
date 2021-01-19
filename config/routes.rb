@@ -6,6 +6,9 @@ Rails.application.routes.draw do
     resources :schedules, only: [:new, :create, :show] do
       resources :shifts, only: [:new, :create]
     end
+    member do
+      get 'search'
+    end
   end
   resources :users, only: [:show]
 end

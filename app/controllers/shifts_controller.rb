@@ -22,6 +22,6 @@ class ShiftsController < ApplicationController
     params
     .require(:form_shift_collection)
     .permit(shifts_attributes: [:work_day, :clock_in, :clock_out, :comment])
-    # .merge(user_id: current_user.id, schedule_id: params[:schedule_id])
+    .merge(shifts_attributes: [user_id: current_user.id, schedule_id: params[:schedule_id]])
   end
 end
