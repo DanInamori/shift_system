@@ -6,7 +6,7 @@
           <%= image_tag 'icon_sanple.png' , size: '80x80' %>
         </div>
         <div class="user-name">
-          <%= link_to current_user.nickname, "#" %>
+          <%= link_to current_user.nickname, user_path(current_user.id) %>
         </div>
       </div>
         <div class="create-room">
@@ -45,14 +45,12 @@
     <div class="shift-screen-main">
       <div class="schedules">
         <% @schedules.each do |schedule|%>
-          <% if @room.id == schedule.room_id %>
             <div class="schedule">
               <%= link_to  room_schedule_path(@room.id, schedule.id), class: "schedule-details" do %>
                 <p class="schedule-name"><%= schedule.name %></p>
                 <p class="schedule-date"><%= schedule.updated_at %></p>
               <% end %>
             </div>
-          <% end %>
         <% end %>
       </div>
         <div class="paginate">

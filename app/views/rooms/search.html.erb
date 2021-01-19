@@ -6,7 +6,7 @@
           <%= image_tag 'icon_sanple.png' , size: '80x80' %>
         </div>
         <div class="user-name">
-          <%= link_to current_user.nickname, "#" %>
+          <%= link_to current_user.nickname, user_path(current_user.id) %>
         </div>
       </div>
         <div class="create-room">

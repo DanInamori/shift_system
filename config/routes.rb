@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :rooms, only: [:new, :create, :show, :destroy] do
     resources :shift_creators, only: [:new, :create]
     resources :schedules, only: [:new, :create, :show] do
-      resources :shifts, only: [:new, :create]
+      resources :shifts, only: [:new, :create, :show]
     end
     member do
       get 'search'
