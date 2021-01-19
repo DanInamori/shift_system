@@ -1,10 +1,11 @@
 class RoomsController < ApplicationController
+  PER = 10
   def index
   end
 
   def show
     @room = Room.find(params[:id])
-    @schedules = Schedule.all
+    @schedules = Schedule.where(room_id: params[:id]).page(params[:page]).per(PER).order(created_at: 'desc')
   end
 
   def new
@@ -28,7 +29,7 @@ class RoomsController < ApplicationController
 
   def search
     @room = Room.find(params[:id])
-    @schedules = Schedule.search(params[:keyword])
+    @schedules = Schedule.search(params[:keyword]).where(room_id: params[:id]).page(params[:page]).per(PER).order(created_at: 'desc')
   end
   
   private
