@@ -20,6 +20,8 @@ ActiveRecord::Schema.define(version: 2021_01_15_024355) do
 
   create_table "schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.string "name", null: false
+    t.date "first_day", null: false
+    t.date "last_day", null: false
     t.bigint "room_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

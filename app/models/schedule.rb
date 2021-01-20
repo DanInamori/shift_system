@@ -1,5 +1,7 @@
 class Schedule < ApplicationRecord
   validates :name, presence: true
+  validates :first_day, presence: true
+  validates :last_day, presence: true
 
   belongs_to :room
   has_many :user_schedules

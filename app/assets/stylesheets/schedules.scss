@@ -137,3 +137,20 @@ opacity: 0.5;
 .back-to-top a:hover {
   font-weight: 600;
 }
+
+.period {
+  display: flex;
+  margin-bottom: 20px;
+}
+
+.form-shift.first_date {
+  margin-right: 5px;
+}
+
+.field.last_day {
+  display: flex;
+}
+
+.form-shift.last_date {
+  margin-left: 5px;
+}
