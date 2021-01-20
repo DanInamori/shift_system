@@ -7,6 +7,18 @@
           <%= f.label :ルーム名 %>
           <%= f.text_field :name, autofocus: true, class: "form-input" %>
         </div>
+        <div class="field">
+          <%= f.label :シフト提出日程 %>      
+        </div>
+        <div class="period">
+          <div class="field">
+            <%= f.date_field :first_day, class: "form-shift first_date" %>
+          </div>
+          <div class="field last_day">
+            <%= f.label :〜 %>      
+            <%= f.date_field :last_day, class: "form-shift last_date" %>
+          </div>
+        </div>
         
         <div class="actions">
           <%= f.submit "追加" %>

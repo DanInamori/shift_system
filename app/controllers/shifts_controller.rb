@@ -1,13 +1,14 @@
 class ShiftsController < ApplicationController
 
   def new
-    @form = Form::ShiftCollection.new
-    @room = Room.find(params[:room_id])
     @schedule = Schedule.find(params[:schedule_id])
+    @form = Form::ShiftCollection.new({}, form_count)
+    @room = Room.find(params[:room_id])
   end
 
   def create
     @form = Form::ShiftCollection.new(shift_collection_params)
+    @form.register_ids(current_user.id, params[:schedule_id])
     if @form.valid?
       @form.save
       redirect_to root_path
@@ -25,6 +26,11 @@ class ShiftsController < ApplicationController
     params
     .require(:form_shift_collection)
     .permit(shifts_attributes: [:work_day, :clock_in, :clock_out, :comment])
-    .merge(shifts_attributes: [user_id: current_user.id, schedule_id: params[:schedule_id]])
   end
+
+  def form_count
+    schedule = Schedule.find(params[:schedule_id])
+    day = (schedule.last_day - schedule.first_day).to_i + 1
+  end
+
 end
