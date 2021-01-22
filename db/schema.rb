@@ -39,6 +39,7 @@ ActiveRecord::Schema.define(version: 2021_01_15_024355) do
     t.date "work_day"
     t.time "clock_in"
     t.time "clock_out"
+    t.string "check"
     t.bigint "user_id"
     t.bigint "schedule_id"
     t.text "comment"

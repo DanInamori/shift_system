@@ -1,152 +1,43 @@
 <div class="schedule-wrapper">
   <div class="schedule-header">
     <div class="schedule-title">
-      <h1><%= "#{current_user.nickname}さんのシフト 提出一覧" %></h1>
+      <h1><%= @schedule.name %></h1>
     </div>
   </div>
   <div class="schedule-main-screen">
     <div class="submitted">
       <div class="submitted-shift-left">
         <div class="submitted-shift-user-name">
-          <%=link_to "スタバ梅田店", "#" %>
+          <%=link_to @room.name, "#" %>
         </div>
       </div>
+
       <div class="submitted-shift-right">
-      
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/1(金)</p>
+        <% @shifts.each do |shift|%>
+          <div class="submitted-shift-block" >
+            <div class="submitted-shift-date">
+              <% if shift.work_day.present?%>
+                <P><%= shift.work_day.strftime('%m/%d') %></p>
+              <% else %>
+                <p><%= "none" %></p>
+              <% end %>
+            </div>
+            <div class="submitted-shift-detail">
+              <% if shift.check.present? %>
+                  <p><%= shift.check %></p>
+                <% else %>
+                  <p><%= shift.clock_in.strftime('%H:%M') %></p>
+              <% end %>
+            </div>
+            <div class="submitted-shift-detail">
+              <% if shift.check.present? %>
+                  <p><%= "" %></p>
+                <% else %>
+                  <p><%= shift.clock_out.strftime('%H:%M') %></p>
+              <% end %>
+            </div>
           </div>
-          <div class="submitted-shift-detail">
-            <p>12〜19</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/2(土)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>9〜19</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/3(日)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>9.5〜15</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/4(月)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>休み</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/5(火)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>9.5〜21</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/6(水)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>10〜16</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/7(木)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>10〜20</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/8(金)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>休み</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/9(土)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>10〜18</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/10(日)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>17〜21</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/11(月)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>休み</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/12(火)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>16〜21</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/13(水)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>15〜20</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/14(木)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>10〜21</p>
-          </div>
-        </div>
-
-        <div class="submitted-shift-block" >
-          <div class="submitted-shift-date">
-            <P>1/15(金)</p>
-          </div>
-          <div class="submitted-shift-detail">
-            <p>12〜18</p>
-          </div>
-        </div>
+        <% end %>
 
       </div>
     </div>

@@ -16,6 +16,7 @@ class SchedulesController < ApplicationController
 
   def show
     @schedule = Schedule.find(params[:id])
+    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
   end
 
   private
