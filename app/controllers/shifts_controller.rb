@@ -1,4 +1,6 @@
 class ShiftsController < ApplicationController
+  before_action :new_move_to_index, only: [:new, :create]
+  before_action :show_move_to_index, only: [:show]
 
   def new
     @schedule = Schedule.find(params[:schedule_id])
@@ -7,7 +9,7 @@ class ShiftsController < ApplicationController
   end
 
   def create
-    @form = Form::ShiftCollection.new(shift_collection_params)
+    @form = Form::ShiftCollection.new(shift_collection_params, form_count)
     @form.register_ids(current_user.id, params[:schedule_id])
     if @form.valid?
       @form.save
@@ -18,6 +20,10 @@ class ShiftsController < ApplicationController
   end
 
   def show
+    @schedule = Schedule.find(params[:schedule_id])
+    @room = Room.find(params[:room_id])
+    @shifts = Shift.where(user_id: current_user.id, schedule_id: @schedule.id)
+    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
   end
   
   private
@@ -25,12 +31,33 @@ class ShiftsController < ApplicationController
   def shift_collection_params
     params
     .require(:form_shift_collection)
-    .permit(shifts_attributes: [:work_day, :clock_in, :clock_out, :comment])
+    .permit(shifts_attributes: [:work_day, :clock_in, :clock_out, :comment, :check])
   end
 
   def form_count
     schedule = Schedule.find(params[:schedule_id])
     day = (schedule.last_day - schedule.first_day).to_i + 1
+  end
+
+  def schedule_day
+    schedule = Schedule.find(params[:schedule_id])
+    first_day = @schedule.first_day
+  end
+
+  def new_move_to_index
+    @schedule = Schedule.find(params[:schedule_id])
+    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
+    unless @shift == nil
+      redirect_to root_path
+    end
+  end
+  
+  def show_move_to_index
+    @schedule = Schedule.find(params[:schedule_id])
+    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
+    if @shift == nil
+      redirect_to root_path
+    end
   end
 
 end

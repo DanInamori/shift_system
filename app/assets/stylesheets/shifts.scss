@@ -1,15 +1,28 @@
-.form-container {
-  height: 60%;
-}
-
-.attendance-contents {
-  height: 60%;
+.container.shift {
   overflow: scroll;
 }
 
 .attendance-content {
   display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.attendance-content-day {
+  height: 80%;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 20px;
+}
+
+.attendance-content-day label {
+  color: #aaaaaa;
+}
+
+.attendance-content-form {
+  display: flex;
+  align-items: center;
 }
 
 .form-shift {
@@ -22,4 +35,26 @@
 
 .form-shift.clock.out {
   margin-right: 5px;
+}
+
+.field.check {
+  display: flex;
+}
+
+.free-button {
+  color: #aaaaaa;
+}
+
+.off-button {
+  color: #aaaaaa;
+}
+
+.cancel-create-shift {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cancel-create-shift a {
+  text-decoration: none;
+  color: #aaaaaa;
 }

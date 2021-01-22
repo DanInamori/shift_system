@@ -48,7 +48,7 @@
             <div class="schedule">
               <%= link_to  room_schedule_path(@room.id, schedule.id), class: "schedule-details" do %>
                 <p class="schedule-name"><%= schedule.name %></p>
-                <p class="schedule-date"><%= schedule.updated_at %></p>
+                <p class="schedule-date"><%= schedule.updated_at.strftime('%Y/%m/%d %H:%M') %></p>
               <% end %>
             </div>
         <% end %>
