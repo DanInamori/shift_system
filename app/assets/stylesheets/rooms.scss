@@ -77,7 +77,7 @@
 }
 
 .bars::before {
-  content: '\f0c9';
+  content: '\f067';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: white;
@@ -99,6 +99,16 @@
  border-right: 1px solid #CC6600;
  padding-bottom: 30px;
  overflow: scroll;
+}
+
+.side-bar-rooms {
+  border-bottom: 1px solid #DCDCDC;
+}
+
+.rooms-header {
+  padding: 3px 15px;
+  color: #aaaaaa;
+  font-size: 15px;
 }
 
 .room {
@@ -124,20 +134,48 @@
   display: block;
 }
 
-.trash-alt::before {
-  content: '\f2ed';
+.room-edit-alt::before {
+  content: '\f0c9';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: #aaaaaa;
   position: absolute;
-  right: 5px;
+  right: 20px;
   top: 25px;
   display: inline;
 }
 
-.trash-alt:hover {
+.room-edit-alt:hover {
   opacity: 0.5;
   transition: all 0.3s;
+}
+
+.room-user {
+  overflow: scroll;
+  word-break: keep-all;
+}
+
+.room-user:hover {
+  background-color: #f5f5f5;
+}
+
+.room-user-name {
+  padding: 5px 20px ;
+  text-decoration: none;
+  color: #110000;
+  display: block;
+}
+
+.room-users-header {
+  padding: 3px 15px;
+  color: #aaaaaa;
+  font-size: 15px;
+  overflow: scroll;
+  word-break: keep-all;
+}
+
+.room-user-name:hover {
+  opacity: 0.8;
 }
 
 .shift-screen {
@@ -240,6 +278,15 @@
 .schedule-date {
  color: black;
  padding-right: 100px;
+}
+
+.schedule-edit-alt::before {
+  content: '\f141';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  color: black;
+  display: inline-block;
+  margin-right: 10px;
 }
 
 .paginate {
@@ -349,4 +396,46 @@
 
 .cancel-create-room a:hover {
   font-weight: 600;
+}
+
+// 下記よりedit.html.rb
+
+.ather-edit {
+  position: absolute;
+  bottom: 50px;
+  right: 100px;
+}
+
+.to-shift-creater::before {
+  content: '\f303';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 22px;
+  color: #aaaaaa;
+  display: inline-block;
+  position: absolute;
+  bottom: 50px;
+  right: 120px;
+}
+
+.to-shift-creater:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.trash-alt::before {
+  content: '\f2ed';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 22px;
+  color: #aaaaaa;
+  display: inline-block;
+  position: absolute;
+  bottom: 50px;
+  right: 80px;
+}
+
+.trash-alt:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
 }

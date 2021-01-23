@@ -1,0 +1,37 @@
+<div class="contents row">
+  <div class="container">
+  <h2>ルーム編集</h2>
+  <%=form_with model: @room, local: true do |f|%>
+    <div class="field">
+      <%= f.label :ルーム名 %>
+      <%= f.text_field :name, autofocus: true, class: "form-input" %>
+    </div>
+    <div class="member-select">
+      <%= f.label :メンバー追加, class:"member-select-label" %>
+      <div class="member">     
+        <% User.where.not(id: @room.user_ids).each do |user| %>
+          <div class="member-name">
+            <input name="room[user_ids][]" type="checkbox" value=<%= user.id %>>
+            <label for="apple" class="label"><%= user.nickname %></label>
+          </div>
+        <% end %>  
+      </div>
+      <%= f.label :現在のメンバー, class:"member-select-label" %>
+        <div class="member"> 
+          <% @users.each do |user|%>
+            <div class="member-name">
+              <input name="room[user_ids][]" type="checkbox" checked="checked" value=<%= user.id %>>
+              <label for="apple" class="label"><%= user.nickname %></label>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    <div class="actions">
+      <%= f.submit "追加" %>
+    </div>
+    <%= link_to new_room_shift_creator_path(@room.id), class:"to-shift-creater" do %>
+    <% end %>
+    <%= link_to room_path(@room.id), class:"trash-alt", method: :delete do %>
+    <% end %>
+  <% end %>
+</div>  
