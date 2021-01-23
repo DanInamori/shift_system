@@ -6,8 +6,8 @@ class SchedulesController < ApplicationController
   end
 
   def create
-    @schedule = Schedule.new(schedule_params)
-    if @schedule.save
+    schedule = Schedule.new(schedule_params)
+    if schedule.save
       redirect_to room_path(@room.id)
     else
       render :new
@@ -17,6 +17,19 @@ class SchedulesController < ApplicationController
   def show
     @schedule = Schedule.find(params[:id])
     @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
+  end
+
+  def edit
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def update
+    schedule = Schedule.find(params[:id])
+    if schedule.update(schedule_params)
+      redirect_to room_path(@room.id)
+    else
+      render :edit
+    end
   end
 
   private

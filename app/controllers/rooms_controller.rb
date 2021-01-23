@@ -27,6 +27,20 @@ class RoomsController < ApplicationController
     redirect_to root_path
   end
 
+  def edit
+    @room = Room.find(params[:id])
+    @users = User.where(id: @room.user_ids)
+  end
+
+  def update
+    @room = Room.find(params[:id])
+    if @room.update(room_params)
+      redirect_to room_path(params[:id])
+    else
+      render :edit
+    end
+  end
+
   def search
     @room = Room.find(params[:id])
     @schedules = Schedule.search(params[:keyword]).where(room_id: params[:id]).page(params[:page]).per(PER).order(created_at: 'desc')
