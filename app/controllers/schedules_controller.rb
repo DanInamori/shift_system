@@ -1,23 +1,30 @@
 class SchedulesController < ApplicationController
   before_action :set_room
+  before_action :move_to_root_path
+  
+  def show
+    @schedule = Schedule.find(params[:id])
+    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
+  end
 
   def new
     @schedule = Schedule.new
   end
 
   def create
-    schedule = Schedule.new(schedule_params)
-    if schedule.save
+    @schedule = Schedule.new(schedule_params)
+    if @schedule.save
       redirect_to room_path(@room.id)
     else
       render :new
     end
   end
 
-  def show
-    @schedule = Schedule.find(params[:id])
-    @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
-    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
+  def destroy
+    schedule = Schedule.find(params[:id])
+    schedule.destroy
+    redirect_to room_path(@room.id)
   end
 
   def edit
@@ -25,8 +32,8 @@ class SchedulesController < ApplicationController
   end
 
   def update
-    schedule = Schedule.find(params[:id])
-    if schedule.update(schedule_params)
+    @schedule = Schedule.find(params[:id])
+    if @schedule.update(schedule_params)
       redirect_to room_path(@room.id)
     else
       render :edit
@@ -43,6 +50,12 @@ class SchedulesController < ApplicationController
 
   def set_room
     @room = Room.find(params[:room_id])
+  end
+
+  def move_to_root_path
+    unless @room.user_ids.include?(current_user.id)
+      redirect_to root_path
+    end
   end
   
 end

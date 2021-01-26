@@ -17,7 +17,7 @@
           <%= link_to room_path(params[:room_id]) do %>
             <%= image_tag "title.png", class:"header-log" %>
           <% end %>
-        <% elsif params[:id].present? %>
+        <% elsif params[:id].present? && request.path.include?("room") %>
           <%= link_to room_path(params[:id]) do %>
             <%= image_tag "title.png", class:"header-log" %>
           <% end %>
