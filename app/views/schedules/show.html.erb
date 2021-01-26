@@ -1,5 +1,14 @@
 <div class="schedule-wrapper">
   <div class="schedule-header">
+    <% if @shift_creator.nil? %>
+      <div class="shift-index">
+        <%=link_to "シフト作成者を決める", new_room_shift_creator_path(@room.id)  %>
+      </div>
+    <% elsif @shift_creator.user_ids.include?(current_user.id) %>
+      <div class="shift-index">
+        <%=link_to "提出シフト一覧", room_schedule_shifts_path(@room.id, @schedule.id) %>
+      </div>
+    <% end %>
     <div class="schedule-title">
       <h1><%= @schedule.name %></h1>
     </div>
@@ -14,9 +23,11 @@
   </div>
   <div class="schedule-footer">
     <div class="schedule-footer-main"> 
-      <div class="submit-shift">
-        <%= link_to "シフトを修正する", "#" %>
-      </div>
+      <% if @shift_creator.present? && @shift_creator.user_ids.include?(current_user.id) %>
+        <div class="submit-shift">
+          <%= link_to "シフトを修正する", "#" %>
+        </div>
+      <% end %>
       <% if @shift == nil %>
         <div class="submit-shift">
           <%= link_to "シフトを提出する", new_room_schedule_shift_path(@schedule.room_id, params[:id]) %>

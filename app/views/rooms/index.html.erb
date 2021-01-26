@@ -16,18 +16,12 @@
       </div>
     </div>
     <div class="side-bar-main">
-      <% current_user.rooms.each do |room| %>
-        <div class="room">
-          <%= link_to room.name, room_path(room.id), class: "room-name" %>
-        </div>
-      <% end %>
     </div>
   </div>
   <div class="shift-screen">
     <div class="shift-screen-header">
       <div class="left-header">
         <div class="header-title">
-          <%= link_to "", "#" %>
         </div>
       </div>
       <div class="main-header">
@@ -35,19 +29,6 @@
     </div>
     <div class="shift-screen-main">
       <div class="schedules">
-        <div class="schedule">
-          <div class="schedule-name">
-          </div>
-          <div class="schedule-date">
-          </div>
-        </div>
       </div>
-    <%# </div> %>
-    <%# <div class="main-footer"> %>
-      <%# <div class="create-schedule" > %>
-        <%# <%= link_to "新規スケジュール作成", "#" %>
-      <%# </div> %>
-    <%# </div> %>
   </div>
 </div>
-    <%# <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>

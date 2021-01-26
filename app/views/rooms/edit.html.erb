@@ -29,7 +29,12 @@
     <div class="actions">
       <%= f.submit "追加" %>
     </div>
-    <%= link_to new_room_shift_creator_path(@room.id), class:"to-shift-creater" do %>
+    <% if @shift_creator.present? %>
+      <%= link_to edit_room_shift_creator_path(@room.id), class:"to-shift-creater" do %>
+      <% end %>
+    <% else %>
+      <%= link_to new_room_shift_creator_path(@room.id), class:"to-shift-creater" do %>
+      <% end %>
     <% end %>
     <%= link_to room_path(@room.id), class:"trash-alt", method: :delete do %>
     <% end %>

@@ -17,6 +17,7 @@ class SchedulesController < ApplicationController
   def show
     @schedule = Schedule.find(params[:id])
     @shift = Shift.find_by(user_id: current_user.id, schedule_id: @schedule.id)
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
   end
 
   def edit
@@ -43,5 +44,5 @@ class SchedulesController < ApplicationController
   def set_room
     @room = Room.find(params[:room_id])
   end
-
+  
 end

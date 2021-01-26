@@ -13,8 +13,18 @@
   <body>
     <header class="header">
       <div class="header-bar">
-        <%= link_to root_path do %>
-          <%= image_tag "title.png", class:"header-log" %>
+        <% if params[:room_id].present? %>        
+          <%= link_to room_path(params[:room_id]) do %>
+            <%= image_tag "title.png", class:"header-log" %>
+          <% end %>
+        <% elsif params[:id].present? %>
+          <%= link_to room_path(params[:id]) do %>
+            <%= image_tag "title.png", class:"header-log" %>
+          <% end %>
+        <% else %>
+          <%= link_to root_path do %>
+            <%= image_tag "title.png", class:"header-log" %>
+          <% end %>
         <% end %>
         <%= link_to destroy_user_session_path, class: "header-menu-bar", method: :delete do %>
         <% end %>
