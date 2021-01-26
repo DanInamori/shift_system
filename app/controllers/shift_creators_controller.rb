@@ -6,8 +6,24 @@ class ShiftCreatorsController < ApplicationController
 
   def create
     @shift_creator = ShiftCreator.new(shift_creator_params)
-    @shift_creator.save  
-    redirect_to room_path(@room.id)
+    if @shift_creator.save 
+      redirect_to room_path(@room.id)
+    else
+      render :new
+    end
+  end
+
+  def edit
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
+  end
+
+  def update
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
+    if @shift_creator.update(shift_creator_params)
+      redirect_to room_path(@room.id)
+    else
+      render :edit
+    end
   end
 
   private

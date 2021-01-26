@@ -1,0 +1,56 @@
+<div class="schedule-wrapper">
+  <div class="schedule-header">
+    <div class="schedule-title">
+      <h1><%= @schedule.name %></h1>
+    </div>
+  </div>
+  <div class="schedule-main-screen">
+    <div class="user-shifts">
+      <% @room.users.each do |user| %>
+
+          <div class="submitted">
+            <div class="submitted-shift-left">
+              <div class="submitted-shift-user-name">
+                <%=link_to "#{user.first_name_kanji} #{user.last_name_kanji}", "#" %>
+              </div>
+            </div>
+
+            <div class="submitted-shift-right">
+              <% user.shifts.where(schedule_id: @schedule.id).each do |shift|%>
+                <div class="submitted-shift-block" >
+                  <div class="submitted-shift-date">
+                    <% if shift.work_day.present?%>
+                      <P><%= shift.work_day.strftime('%m/%d') %></p>
+                    <% else %>
+                      <p><%= "none" %></p>
+                    <% end %>
+                  </div>
+                  <div class="submitted-shift-detail">
+                    <% if shift.check.present? %>
+                      <p><%= shift.check %></p>
+                    <% elsif shift.clock_in.present?%>
+                      <p><%= shift.clock_in.strftime('%H:%M') %></p>
+                  <% else %>
+                    <p><%= "" %></p>
+                    <% end %>
+                  </div>
+                  <div class="submitted-shift-detail">
+                    <% if shift.clock_out.present? %>
+                      <p><%= shift.clock_out.strftime('%H:%M') %><%= "" %></p>
+                    <% else %>
+                      <p><%= "" %></p>
+                    <% end %>
+                  </div>
+                </div>
+              <% end %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+  </div>
+  <div class="schedule-footer">
+    <div class="submit-shift">
+      <%= link_to "　完成　", "#" %>
+    </div>
+  </div>
+</div>

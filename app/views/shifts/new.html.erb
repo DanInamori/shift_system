@@ -7,11 +7,11 @@
           <%= form.fields_for :shifts do |f|%>
             <div class="attendance-content">
               <div class="attendance-content-day">
-                <label><%= "#{@schedule.first_day}" %></label>
+                <label><%= "#{@schedule.first_day + f.index}" %></label>
               </div>
               <div class="attendance-content-form">
                 <div class="field">
-                  <%= f.date_field :work_day, autofocus: true, class: "form-shift date" %>
+                  <%= f.date_field :work_day, autofocus: true, class: "form-shift date", type: "hidden", value: "#{@schedule.first_day + f.index}" %>
                 </div>
                 <div class="field">
                   <%= f.time_field :clock_in, class: "form-shift clock out" %>
@@ -22,11 +22,11 @@
                 </div>
                 <div class="field check">
                   <div class="free-button">
-                    <%= f.radio_button :check, :free, value: :free, class:"radio-button" %>
+                    <%= f.radio_button :check, :free, value: :free, class:"free-radio-button" %>
                     <%= "free" %>
                   </div>
                   <div class="off-button">
-                    <%= f.radio_button :check, :off, checked: true, value: :off, class:"radio-button" %>
+                    <%= f.radio_button :check, :off, checked: true, value: :off, class:"off-radio-button" %>
                     <%= "off" %>
                   </div>
                 </div>

@@ -24,16 +24,18 @@
             </div>
             <div class="submitted-shift-detail">
               <% if shift.check.present? %>
-                  <p><%= shift.check %></p>
-                <% else %>
-                  <p><%= shift.clock_in.strftime('%H:%M') %></p>
+                <p><%= shift.check %></p>
+              <% elsif shift.clock_in.present?%>
+                <p><%= shift.clock_in.strftime('%H:%M') %></p>
+             <% else %>
+               <p><%= "" %></p>
               <% end %>
             </div>
             <div class="submitted-shift-detail">
-              <% if shift.check.present? %>
-                  <p><%= "" %></p>
-                <% else %>
-                  <p><%= shift.clock_out.strftime('%H:%M') %></p>
+              <% if shift.clock_out.present? %>
+                <p><%= shift.clock_out.strftime('%H:%M') %><%= "" %></p>
+              <% else %>
+                <p><%= "" %></p>
               <% end %>
             </div>
           </div>
