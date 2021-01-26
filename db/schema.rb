@@ -58,15 +58,6 @@ ActiveRecord::Schema.define(version: 2021_01_15_024355) do
     t.index ["user_id"], name: "index_user_rooms_on_user_id"
   end
 
-  create_table "user_schedules", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
-    t.bigint "user_id"
-    t.bigint "schedule_id"
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["schedule_id"], name: "index_user_schedules_on_schedule_id"
-    t.index ["user_id"], name: "index_user_schedules_on_user_id"
-  end
-
   create_table "user_shift_creators", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "shift_creator_id"
@@ -99,8 +90,6 @@ ActiveRecord::Schema.define(version: 2021_01_15_024355) do
   add_foreign_key "shifts", "users"
   add_foreign_key "user_rooms", "rooms"
   add_foreign_key "user_rooms", "users"
-  add_foreign_key "user_schedules", "schedules"
-  add_foreign_key "user_schedules", "users"
   add_foreign_key "user_shift_creators", "shift_creators"
   add_foreign_key "user_shift_creators", "users"
 end

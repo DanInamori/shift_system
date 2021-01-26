@@ -73,20 +73,31 @@ h2 {
 .input-name-wrap {
   display: flex;
   justify-content: space-between;
+  width: 100%;
+}
+
+.form-first-name {
+  width: 50%;
 }
 
 .form-first-input {
   padding: 10px;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-  width: 49%;
+  width: 100%;
+  margin-right: 5px;
+}
+
+.form-last-name {
+  width: 50%;
 }
 
 .form-last-input {
   padding: 10px;
   border: 1px solid #dcdcdc;
   border-radius: 10px;
-  width: 49%;
+  width: 100%;
+  margin-left: 5px;
 }
 
 input::placeholder {

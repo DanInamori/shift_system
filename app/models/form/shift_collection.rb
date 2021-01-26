@@ -20,7 +20,7 @@ class Form::ShiftCollection < Form::Base
   def save
     Shift.transaction do
       self.shifts.map do |shift|
-        shift.save
+          shift.save!
       end
     end
       return true

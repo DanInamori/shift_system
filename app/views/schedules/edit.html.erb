@@ -25,6 +25,8 @@
         </div>
       <% end %>
     </div>
+    <%= link_to room_schedule_path(@room.id, @schedule.id), class:"trash-alt-schedule", method: :delete do %>
+    <% end %>
     <div class="cancel-create-room">
       <%= link_to "戻る", room_path(@room.id) %>
     </div>
