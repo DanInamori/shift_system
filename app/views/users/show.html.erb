@@ -1,15 +1,41 @@
 <div class="schedule-wrapper">
   <div class="schedule-header">
     <div class="schedule-title">
-      <h1><%= "#{@user.nickname}さん" %></h1>
+      <h1><%= "#{@user.nickname}" %></h1>
     </div>
   </div>
   <div class="schedule-main-screen">
-    
+    <div class="user-profile">
+      <div class="user-show-left">
+        <div class="user-image-show">
+          <%= image_tag 'icon_sanple.png' %>
+        </div>
+      </div>
+      <div class="user-show-right">
+        <div class="user-name-kana">
+          <div class="user-name-first-kana">
+            <p><%= "#{@user.first_name_kana}"%></p>
+          </div>
+          <div class="user-name-last-kana">
+            <p><%= "#{@user.last_name_kana}"%></p>
+          </div>
+        </div>
+        <div class="user-name-kanji">
+          <div class="user-name-first-kanji">
+            <p><%= "#{@user.first_name_kanji}"%></p>
+          </div>
+          <div class="user-name-last-kanji">
+            <p><%= "#{@user.last_name_kanji}"%></p>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
   <div class="schedule-footer">
-    <div class="submit-shift">
-      <%= link_to "プロフィールを変更する", "#" %>
-    </div>
+    <% if current_user.id == @user.id %>
+      <div class="submit-shift">
+        <%= link_to "プロフィールを変更する", edit_user_registration_path %>
+      </div>
+    <% end %>
   </div>
 </div>
