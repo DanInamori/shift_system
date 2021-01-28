@@ -18,8 +18,10 @@ class Schedule < ApplicationRecord
   end
 
   def date_of_terms
-    if first_day > last_day
-      errors.add(:first_day)
+    if first_day.present? && last_day.present?
+      if first_day >= last_day 
+        errors.add(:first_day)
+      end
     end
   end
 end
