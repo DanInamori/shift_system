@@ -11,7 +11,7 @@
           <div class="submitted">
             <div class="submitted-shift-left">
               <div class="submitted-shift-user-name">
-                <%=link_to "#{user.first_name_kanji} #{user.last_name_kanji}", "#" %>
+                <%=link_to "#{user.first_name_kanji} #{user.last_name_kanji}", user_path(user.id) %>
               </div>
             </div>
 

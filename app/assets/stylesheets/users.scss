@@ -126,3 +126,128 @@ input::placeholder {
   opacity: 0.8;
   transition: all 0.3s;
 }
+
+// 下記よりshow.html.erb
+
+.user-profile {
+  width: 100%;
+  height: 100%;
+  padding: 60px;
+  display: flex;
+}
+
+.user-show-left {
+  width: 40%;
+  height: 100%;
+  padding-left: 10%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-image-show img {
+  width: 300px;
+  height: 300px;
+  border-radius: 50%;
+  border: 2px solid #aaaaaa;
+}
+
+.user-show-right {
+  width: 60%;
+  height: 100%;
+  padding: 100px 40px;
+}
+
+.user-name-kana {
+  width: 300px;
+  height: 45%;
+  display: flex;
+}
+
+.user-name-first-kana {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name-first-kana p {
+  font-size: 20px;
+  color: #aaaaaa;
+}
+
+.user-name-last-kana {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name-last-kana p {
+  font-size: 20px;
+  color: #aaaaaa;
+}
+
+.user-name-kanji {
+  width: 300px;
+  height: 45%;
+  display: flex;
+}
+
+.user-name-first-kanji {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name-first-kanji p {
+  font-size: 27px;
+  color: #aaaaaa;
+}
+
+.user-name-last-kanji {
+  width: 50%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-name-last-kanji p {
+  font-size: 27px;
+  color: #aaaaaa;
+}
+
+// 下記よりedit.html.erb
+.sub-button {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.trash-alt-user::before {
+  content: '\f2ed';
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+  font-size: 22px;
+  color: #aaaaaa;
+  display: inline-block;
+  margin-right: 20px;
+}
+
+.trash-alt-user:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
+}
+
+.cancel-edit-user a {
+  text-decoration: none;
+  color: #aaaaaa;
+}
+
+.cancel-edit-user:hover {
+  font-weight: 600;
+}
