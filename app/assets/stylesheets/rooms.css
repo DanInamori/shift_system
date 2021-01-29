@@ -363,7 +363,7 @@
   transition: all 0.3s;
 }
 
-// 下記よりnew.html.rb
+/* 下記よりnew.html.rb */
 .member {
   overflow: scroll;
   height: 45px;
@@ -399,7 +399,7 @@
   font-weight: 600;
 }
 
-// 下記よりedit.html.rb
+ /* 下記よりedit.html.rb */
 
 .ather-edit {
   position: absolute;
