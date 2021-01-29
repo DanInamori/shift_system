@@ -4,7 +4,6 @@
   background-color: #f8f8ff;
   display: flex;
   justify-content: center;
-  // align-items: baseline;
 }
 
 .container {
@@ -127,7 +126,7 @@ input::placeholder {
   transition: all 0.3s;
 }
 
-// 下記よりshow.html.erb
+/* 下記よりshow.html.erb */
 
 .user-profile {
   width: 100%;
@@ -222,7 +221,7 @@ input::placeholder {
   color: #aaaaaa;
 }
 
-// 下記よりedit.html.erb
+ /* 下記よりedit.html.erb */
 .sub-button {
   display: flex;
   justify-content: flex-end;

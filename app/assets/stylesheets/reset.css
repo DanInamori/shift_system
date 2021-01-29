@@ -24,7 +24,9 @@ ul {
 }
 
 input {
-  font-size: 100%;
+  font-family:inherit;
+  font-size:inherit;
+  font-weight:inherit;
 }
 
 #yui3-css-stamp.cssreset { display: none; }
