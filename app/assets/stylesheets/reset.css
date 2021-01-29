@@ -1,18 +1,30 @@
-body {
+html {
   height: 100vh;
   width: 100vw;
 }
 
+body,
+h1,
+p,
+input,
+ul,
+li {
+margin: 0;
+padding: 0;
+}
+
 h1 {
-  margin: 0;
   font-size:100%;
   font-weight:normal;
 }
 
-p {
-  margin: 0;
+
+ul {
+  list-style: none;
 }
 
 input {
   font-size: 100%;
 }
+
+#yui3-css-stamp.cssreset { display: none; }
