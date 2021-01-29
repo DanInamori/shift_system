@@ -15,12 +15,17 @@
 
 .shift-index a {
   text-decoration: none;
-  color: #110000;
+  color: #aaaaaa;
   position: absolute;
   bottom: 10px;
   left: 20px;
   font-size: 20px;
  }
+
+ .shift-index a:hover{
+  opacity: 0.5;
+  transition: all 0.3s;
+  }
 
 .schedule-title {
   font-size: 25px;
@@ -30,7 +35,7 @@
 
 .shift-check a {
  text-decoration: none;
- color: #110000;
+ color: #aaaaaa;
  position: absolute;
  bottom: 10px;
  right: 20px;
@@ -39,6 +44,7 @@
 
 .shift-check a:hover{
 opacity: 0.5;
+transition: all 0.3s;
 }
 
 .schedule-main-screen {
