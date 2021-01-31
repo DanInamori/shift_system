@@ -54,6 +54,7 @@
       </div>
     </div>
     <div class="shift-screen-main">
+      <%= image_tag 'sanple.jpg', class:"screen-image" %>
       <div class="schedules">
         <% @schedules.each do |schedule|%>
           <% if @room.id == schedule.room_id %>
