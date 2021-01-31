@@ -20,6 +20,7 @@ class RoomsController < ApplicationController
   
   def create
     room = Room.new(room_params)
+    binding.pry
     if room.save
       redirect_to room_path(room.id)
     else
