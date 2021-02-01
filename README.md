@@ -72,7 +72,7 @@
 
 ## 実装した機能についてのGIFと説明
 ### ユーザー登録機能
-
+  ![ユーザー登録](https://raw.github.com/wiki/DanInamori/shift_system/images/ユーザー登録.gif)
 
 ### ルーム作成機能
 
@@ -104,7 +104,7 @@
  - シフト提出日での通知機能の実装
 
 ## データベース設計
-  ![ER図](/shift_system.png)
+  ![ER図](/images/shift_system.png)
 
 ## テーブル設計
 ### users テーブル

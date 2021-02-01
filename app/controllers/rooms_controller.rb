@@ -12,6 +12,7 @@ class RoomsController < ApplicationController
   
   def show
     @schedules = Schedule.where(room_id: params[:id]).page(params[:page]).per(PER).order(created_at: 'desc')
+    @shift_creator = ShiftCreator.find_by(room_id: params[:id])
   end
   
   def new
@@ -20,7 +21,6 @@ class RoomsController < ApplicationController
   
   def create
     room = Room.new(room_params)
-    binding.pry
     if room.save
       redirect_to room_path(room.id)
     else

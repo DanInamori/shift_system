@@ -1,6 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_room
   before_action :move_to_root_path
+  before_action :new_move_to_root_path
   
   def show
     @schedule = Schedule.find(params[:id])
@@ -54,6 +55,13 @@ class SchedulesController < ApplicationController
 
   def move_to_root_path
     unless @room.user_ids.include?(current_user.id)
+      redirect_to root_path
+    end
+  end
+
+  def new_move_to_root_path
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
+    unless @shift_creator.user_ids.include?(current_user.id)
       redirect_to root_path
     end
   end
