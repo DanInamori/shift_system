@@ -74,9 +74,11 @@
         </div>
     </div>
     <div class="main-footer">
-      <div class="create-schedule" >
-        <%= link_to "新規スケジュール作成", new_room_schedule_path(params[:id]) %>
-      </div>
+      <% if @shift_creator.present? && @shift_creator.user_ids.include?(current_user.id) %>
+        <div class="create-schedule" >
+          <%= link_to "新規スケジュール作成", new_room_schedule_path(params[:id]) %>
+        </div>
+      <% end%>
     </div>
   </div>
 

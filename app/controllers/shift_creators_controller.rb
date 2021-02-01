@@ -18,8 +18,8 @@ class ShiftCreatorsController < ApplicationController
   end
 
   def update
-    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])
-    if @shift_creator.update(shift_creator_params)
+    @shift_creator = ShiftCreator.find_by(room_id: params[:room_id])  
+    if @shift_creator.update(shift_creator_params)      
       redirect_to room_path(@room.id)
     else
       render :edit
