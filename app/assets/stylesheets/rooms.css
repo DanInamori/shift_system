@@ -22,14 +22,19 @@
 }
 
 .header-menu-bar::before {
-  content: '\f107';
+  content: '\f2f5';
   font-family: 'Font Awesome 5 Free';
   font-weight: 900;
   color: black;
   position: absolute;
-  bottom: 5px;
+  bottom: 10px;
   right: 35px;
   font-size: 25px;
+}
+
+.header-menu-bar:hover {
+  opacity: 0.5;
+  transition: all 0.3s;
 }
 
 .wrapper {

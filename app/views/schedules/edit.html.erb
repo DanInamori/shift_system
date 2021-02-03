@@ -4,7 +4,7 @@
     <div class="form-content">
       <%=form_with model: [@room, @schedule], local: true do |f| %>
         <div class="field">
-          <%= f.label :ルーム名 %>
+          <%= f.label :スケジュール名 %>
           <%= f.text_field :name, autofocus: true, class: "form-input" %>
         </div>
         <div class="field">
