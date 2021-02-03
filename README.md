@@ -130,7 +130,9 @@
  - シフト提出日での通知機能の実装
 
 ## データベース設計
-  ![ER図](/image/shift_system.png)
+  ![ER図](/image/システム図image.png)
+
+  ![result](https://github.com/DanInamori/shift_system/blob/master/image/%E3%82%B7%E3%83%95%E3%83%88%E4%BD%9C%E6%88%90.gif)
 
 ## テーブル設計
 ### users テーブル
