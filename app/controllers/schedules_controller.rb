@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :set_room
   before_action :move_to_root_path
-  before_action :new_move_to_root_path
+  before_action :new_move_to_root_path, only: [:new, :create]
   
   def show
     @schedule = Schedule.find(params[:id])
