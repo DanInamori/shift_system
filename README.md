@@ -7,7 +7,7 @@
   2. シフト作成者が提出されたシフトを見ることができる。
   - シフト作成者も従業員のためシフトを提出できる。
 
-  ![システム図](/app/assets/images/要件定義image.png)
+  ![システム図](/image/システム図image.png)
 
 ## URL
   - https://shift-system.herokuapp.com/
@@ -85,7 +85,7 @@
     - 従業員は希望シフト(例: 12:00~18:00, off, free など)を選択して提出することができる。
     - 従業員は自分の提出したシフトを確認することができる。
     - 保管された全従業員のシフトはシフト作成者のみスケジュール内でシフト一覧を表示して確認できる。
-    ![シフト提出](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B7%E3%83%95%E3%83%88%E4%BD%9C%E6%88%90.gif)
+    ![シフト提出](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B7%E3%83%95%E3%83%88%E6%8F%90%E5%87%BA.gif)
 
  5. シフト作成者登録機能 
     - シフト作成者を登録することができる機能である。
@@ -100,7 +100,7 @@
 
 
 ### 画面推移
-    ![画面推移図](/image/画面推移image.png)
+  ![画面推移図](/image/画面推移image.png)
 
 
 ## 実装予定の機能
@@ -120,7 +120,7 @@
  - シフト提出日での通知機能の実装
 
 ## データベース設計
-  ![ER図](/image/システム図image.png)
+  ![ER図](/image/ER図image.png)
 
 ## テーブル設計
 ### users テーブル
