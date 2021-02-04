@@ -198,8 +198,14 @@
 ## ローカルでの操作方法
  ### 開発環境
   ruby: 2.6.5
+  rails: 6.0.3.4
+  yarn: 1.22.10
+  ブラウザ: Google Chrome
+ ### ターミナルでの操作手順
+  1. git clone https://github.com/DanInamori/shift_system.git
+  2. cd shift_system
+  3. yarn upgrade
+  4. rails s
 
- ### 操作手順
-  1. 
 
 
