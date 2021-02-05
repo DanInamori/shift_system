@@ -33,7 +33,8 @@
   - 新しくシフト作成者になる方法
     1. テスト用アカウントのアルバイトスタッフAでログインする。
     2. 左の三本線のアイコン、または上記の店名をクリックする。
-    3. 右下のペンマークをクリック→シフト作成者を選択する。
+    3. 右下のペンマークをクリック
+    4. シフト作成者を選択する。
 
   - シフト作成者が提出されたシフトの確認方法
     1. テスト用アカウントのシフト作成者でログインする。
@@ -64,39 +65,39 @@
     - 各従業員はアプリケーションを利用する前に必ずアカウントを作成する必要がある。
     - 新規作成には”ニックネーム”、”Eメール”、”パスワード”、”フルネーム(漢字)”、”フルネーム(カナ)”を入力する必要がある。
     - アカウント作成後はログインして、アプリケーションを利用することができる。
-    ![ユーザー登録](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%99%BB%E9%8C%B2.gif)
+    ![ユーザー登録](https://github.com/DanInamori/shift_system/blob/master/image/%E3%83%A6%E3%83%BC%E3%82%B6%E3%83%BC%E7%99%BB%E9%8C%B2.gif)
     
  2. ルーム(会社名、店名 )作成機能
     - アカウント作成後はログインして、アプリケーションを利用することができる。
     - 新規作成には”ルーム名”、”所属メンバー”を入力する必要がある。
     - 名前には所属先である会社名や店名を記載する。
     - 従業員によっては複数の会社で働くためルームを複数持つことができる。
-    ![ルーム作成](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%83%AB%E3%83%BC%E3%83%A0%E4%BD%9C%E6%88%90.gif)
+    ![ルーム作成](https://github.com/DanInamori/shift_system/blob/master/image/%E3%83%AB%E3%83%BC%E3%83%A0%E4%BD%9C%E6%88%90.gif)
 
- 3. スケジュール(シフトを提出する日数)作成機能
+ 3. スケジュール(シフトを提出する日数)作成機能 a
     - ルーム内でシフトを提出する際の日数を決めることができる機能である。
     - 提出する日数を定めることでシフト作成者は期間内のみのシフトの表示や確認をすることができる。
     - 新規作成には”スケジュール名”、”提出する初日の日程”、”提出する最終日の日程”を入力する必要がある。
     - シフト作成者のみがスケジュールを作成することができる。
-    ![スケジュール作成](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E4%BD%9C%E6%88%90.gif)
+    ![スケジュール作成](https://github.com/DanInamori/shift_system/blob/master/image/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E4%BD%9C%E6%88%90.gif)
 
- 4. シフト提出機能
+ 4. シフト提出機能 a
     - 従業員が提出するシフトを新規作成する機能である。
     - 従業員は希望シフト(例: 12:00~18:00, off, free など)を選択して提出することができる。
     - 従業員は自分の提出したシフトを確認することができる。
     - 保管された全従業員のシフトはシフト作成者のみスケジュール内でシフト一覧を表示して確認できる。
-    ![シフト提出](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B7%E3%83%95%E3%83%88%E6%8F%90%E5%87%BA.gif)
+    ![シフト提出](https://github.com/DanInamori/shift_system/blob/master/image/%E3%82%B7%E3%83%95%E3%83%88%E6%8F%90%E5%87%BA.gif)
 
- 5. シフト作成者登録機能 
+ 5. シフト作成者登録機能 a
     - シフト作成者を登録することができる機能である。
     - シフト作成者に登録されるとシフト作成者にのみ表示されるボタン(スケジュール作成ボタン、従業員のシフト一覧表示ボタン)や画面(スケジュール作成画面、従業員のシフト一覧表示画面)が表示される。
     - シフト作成者は複数のユーザー登録することができる。
-    ![シフト作成者登録](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B7%E3%83%95%E3%83%88%E4%BD%9C%E6%88%90%E8%80%85%E7%99%BB%E9%8C%B2.gif)
+    ![シフト作成者登録](https://github.com/DanInamori/shift_system/blob/master/image/%E3%82%B7%E3%83%95%E3%83%88%E4%BD%9C%E6%88%90%E8%80%85%E7%99%BB%E9%8C%B2.gif)
 
- 6. スケジュール検索機能
+ 6. スケジュール検索機能 a
     - スケジュールを検索する機能である。
     - スケジュール一覧画面の検索フォームに探したいスケジュールの名前を入力することによって、入力した文字が含まれているスケジュールが表示される。
-    ![スケジュール検索](https://github.com/DanInamori/shift_system/blob/Giftest/image/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E6%A4%9C%E7%B4%A2%E6%A9%9F%E8%83%BD.gif)
+    ![スケジュール検索](https://github.com/DanInamori/shift_system/blob/master/image/%E3%82%B9%E3%82%B1%E3%82%B8%E3%83%A5%E3%83%BC%E3%83%AB%E6%A4%9C%E7%B4%A2%E6%A9%9F%E8%83%BD.gif)
 
 
 ### 画面推移
@@ -206,6 +207,7 @@
   2. cd shift_system
   3. yarn upgrade
   4. rails s
+  5. ブラウザ上で http://localhost:3000
 
 
 
