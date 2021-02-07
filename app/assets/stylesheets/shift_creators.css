@@ -19,14 +19,14 @@
 }
 
 .creator-actions input {
-  background-color: #CC6600;
+  background-color: #bbbbbb;
   border-radius: 10px;
   color: #F8F8FF;
   font-size: 100%;
   padding: 10px;
   border: none;
   width: 40%;
-  
+  pointer-events: none;
 }
 
 .creator-actions input:hover {
