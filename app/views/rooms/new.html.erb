@@ -9,17 +9,17 @@
     <div class="member-select">
       <label class="member-select-label">メンバー選択</label>
         <div class="member">     
-          <% User.where.not(id: current_user.id).each do |user| %>
+          <%= f.collection_check_boxes :user_ids, User.where.not(id: current_user.id), :id, :nickname do |user| %>
             <div class="member-name">
-              <input name="room[user_ids][]" type="checkbox" value=<%= user.id %>>
-              <label for="apple" class="label"><%= user.nickname %></label>
+              <%= user.check_box %>
+              <%= user.label {user.text} %>
             </div>
           <% end %>  
         </div>
       <input name="room[user_ids][]" type="hidden" value=<%= current_user.id %>>
     </div>
     <div class="actions">
-        <%= f.submit "追加" %>
-      </div>
+      <%= f.submit "追加" %>
+    </div>
   <% end %>
 </div>  

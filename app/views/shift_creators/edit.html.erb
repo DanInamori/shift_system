@@ -8,14 +8,14 @@
           <div class="member">     
             <% User.where(id: @room.users.ids).each do |user| %>
               <div class="member-name">
-                <input name="shift_creator[user_ids][]" type="checkbox" value=<%= user.id %>>
+                <input name="shift_creator[user_ids][]" type="checkbox" value=<%= user.id %> class="member-name-check">
                 <label for="apple" class="label"><%= user.nickname %></label>
               </div>
             <% end %>  
           </div>
         </div>
         <div class="creator-actions">
-          <%= f.submit "作成者に登録する" %>
+          <%= f.submit "作成者に登録する", disabled: true, id: "submit_btn" %>
         </div>
       <% end %>     
     </div>

@@ -20,9 +20,9 @@ class RoomsController < ApplicationController
   end
   
   def create
-    room = Room.new(room_params)
-    if room.save
-      redirect_to room_path(room.id)
+    @room = Room.new(room_params)
+    if @room.save
+      redirect_to room_path(@room.id)
     else
       render :new
     end
